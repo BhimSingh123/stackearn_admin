@@ -109,23 +109,24 @@ const DashboardLayout = ({ children }) => {
 
       {/* Sidebar */}
       <div
-        className={`navbar-light  border-end position-fixed top-0 start-0 h-100 ${showSidebar ? "d-block" : "d-none"} d-lg-block`}
+        className={`navbar-light bg-light border-end position-fixed top-0 start-0 h-100 ${showSidebar ? "d-block" : "d-none"} d-lg-block`}
         style={{ width: "250px", zIndex: 1040 }}
       >
         <div className="ms-auto d-flex align-items-center px-2  py-2">
           <ProfileIcon />
         </div>
         <div className="d-flex flex-column h-100 overflow-auto custom-scroll account-settings mb-2">
+          {/* Navigation links */}
           <nav className="nav flex-column ">
             {navItems.map((item, idx) => (
               <Link
                 key={idx}
                 to={item.to}
-                className={`nav-link  px-3 py-2 mt-2  rounded d-flex align-items-start justify-content-start  text-uppercase fw-bold  ${location.pathname === item.to
-                  ? "itemdata"
+                className={`nav-link  px-3 py-2 mt-2  rounded d-flex align-items-center justify-content-center text-uppercase fw-semibold  ${location.pathname === item.to
+                  ? "login-head "
                   : " "
                   }`}
-                style={{ minHeight: "45px", textAlign: "start" }}
+                style={{ minHeight: "45px", textAlign: "center" }}
               >
                 {item.label}
               </Link>
@@ -136,6 +137,7 @@ const DashboardLayout = ({ children }) => {
 
       <div className="flex-grow-1 ms-lg-250">
         <Navbar
+          bg="light"
           expand="lg"
           className="border-bottom position-fixed top-0 w-100"
           style={{ zIndex: 1050 }}
