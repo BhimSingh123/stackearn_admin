@@ -44,11 +44,13 @@ import NewsLetter from "./Admin/Email/NewsLetter.jsx";
 import UserEmail from "./Admin/Email/UserEmail.jsx";
 import AdminSupport from "./Admin/Email/Support.jsx"
 import Payout from './Admin/payout/Payout.jsx';
+import ScrollToTop from './Admin/common/ScrollToTop.jsx';
 function App() {
   return (
     <>
       <Toaster className="top-right" />
       <BrowserRouter >
+        <ScrollToTop />
         <Routes>
           <Route path="/admin/login" element={<AdminLogin />} />
           <Route path="/" element={<AdminLogin />} />

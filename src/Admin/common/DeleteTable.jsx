@@ -240,7 +240,7 @@ export default function DeleteTable({ step, Id, fetchMarketLists, className }) {
                 style={{ cursor: 'pointer' }}
                 className={`d-flex cancelled-status px-2 py-1 rounded align-items-center justify-content-center ${className}`}
             >
-                <MdDelete size={20} className="text-red-600"/>
+                <MdDelete size={20} className="text-red-600" />
                 <span >Delete</span>
             </div>
 
@@ -250,15 +250,15 @@ export default function DeleteTable({ step, Id, fetchMarketLists, className }) {
                     className="modal fade show d-block"
                     tabIndex="-1"
                     role="dialog"
-                    style={{ backgroundColor: "rgba(0,0,0,0.5)" }}
+                    style={{ zIndex: 1050, backgroundColor: "rgba(0,0,0,0.5)" }}
                 >
                     <div
                         className="modal-dialog modal-dialog-centered modal-lg custom-modal-dialog" // Added custom-modal-dialog class for larger size
                         role="document"
                     >
                         <div className="modal-content">
-                            <div className="modal-header py-2 px-3 gap-3"> {/* Added py-3 for padding and my-3 for margin */}
-                                <h5 className="modal-title">Delete</h5>
+                            <div className="d-flex  justify-content-between modal-header py-2 px-3 gap-3"> {/* Added py-3 for padding and my-3 for margin */}
+                                <h5 className="modal-title">Confirm Delete</h5>
                                 <button
                                     type="button"
                                     className=" custom-close-btn"
@@ -271,7 +271,6 @@ export default function DeleteTable({ step, Id, fetchMarketLists, className }) {
                             </div>
 
                             <div className="modal-body">
-                                <img src={DeleteImg} alt="" className="img-fluid modal-image" />
                                 <p className="text-wrap text-break text-center mt-2 font-bold text-black">
                                     ⚠️ Are you sure? This action <span className="text-danger">cannot be undone!</span>
                                 </p>

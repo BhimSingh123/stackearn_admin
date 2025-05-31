@@ -1,11 +1,6 @@
-import React from "react";
-import  NoDataPageImage from "../../assert/course-02.jpg";
-// import { logo ,Error1 } from "../imagepath";
-// import { Error1, logo } from "../";
+import NoDataPageImage from "../../assert/NoDat.png";
 
 const NoDataPage = () => {
-
-
 
   return (
     <>

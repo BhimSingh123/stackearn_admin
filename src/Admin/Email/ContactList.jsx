@@ -64,7 +64,7 @@ const StudentSetting = () => {
                             to="/student/student-profile"
                             className="profile-pic"
                           >
-                            <img src=user16 alt="Img" className="img-fluid" />
+                            <img src={user16} alt="Img" className="img-fluid" />
                           </Link>
                           <div className="profile-upload-head">
                             <h4>

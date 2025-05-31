@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import { MdDelete } from "react-icons/md";
+import { MdClose, MdDelete } from "react-icons/md";
 import PropTypes from "prop-types";
 import toast from "react-hot-toast";
 import Listing from "../Api/Listing";
 import DeleteImg from "../../assert/delete.webp"
-import { IoMdClose } from "react-icons/io";
 
 export default function Delete({ step, Id, fetchMarketLists, className }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -195,59 +194,56 @@ export default function Delete({ step, Id, fetchMarketLists, className }) {
       {/* Delete Button */}
       <div
         onClick={toggleModal}
-        style={{ cursor: 'pointer' }}
-        className={`d-flex cancelled-status  px-2 py-1 rounded align-items-center justify-content-center `}
+        style={{ cursor: "pointer" }}
+        className="d-flex cancelled-status px-2 py-1 rounded align-items-center justify-content-center"
       >
         <MdDelete size={20} />
-        <span style={{ marginLeft: '2px' }}>Delete</span>
+        <span style={{ marginLeft: "2px" }}>Delete</span>
       </div>
 
-      {/* Modal */}
+      {/* Bootstrap Modal */}
       {isOpen && (
         <div
           className="modal fade show d-block"
           tabIndex="-1"
+          style={{
+            zIndex: 1050,
+            display: 'block',
+            backgroundColor: 'rgba(0, 0, 0, 0.5)', // Dim background
+          }}
           role="dialog"
-          style={{ backgroundColor: "rgba(0,0,0,0.5)" }}
         >
+
           <div
             className="modal-dialog modal-dialog-centered modal-lg custom-modal-dialog" // Added custom-modal-dialog class for larger size
             role="document"
           >
             <div className="modal-content">
-              <div className="modal-header py-2 px-3 gap-3"> {/* Added py-3 for padding and my-3 for margin */}
-                <h5 className="modal-title">Delete</h5>
-                <button
-                  type="button"
-                  className=" custom-close-btn"
-                  onClick={handleClose}
-                  aria-label="Close"
-                >
-                  <IoMdClose size={24} color='black' /> {/* Used icon here */}
+              <div className="modal-header d-flex justify-content-between align-items-center">
+                <h5 className="modal-title">Delete Confirmation</h5>
+                <button type="button" className="text-gray-600 hover:text-gray-900" onClick={toggleModal} aria-label="Close">
+                  <MdClose size={24} />
                 </button>
-
               </div>
-
-
               <div className="modal-body">
                 <img src={DeleteImg} alt="" className="img-fluid modal-image" />
-                <p className="text-wrap text-break text-center mt-2 font-bold text-black">
-                  ⚠️ Are you sure? This action <span className="text-danger">cannot be undone!</span>
-                </p>
 
+                <p className="text-danger fw-bold">
+                  ⚠️ Are you sure? This action <u>cannot be undone!</u>
+                </p>
               </div>
 
-              <div className="modal-footer">
+              <div className="modal-footer justify-content-center">
                 <button
                   type="button"
                   className="btn btn-secondary"
-                  onClick={toggleModal}
+                  onClick={handleClose}
                 >
                   Cancel
                 </button>
                 <button
                   type="button"
-                  className="btn btn-danger text-white"
+                  className="btn btn-danger"
                   onClick={handleClick}
                 >
                   {loading ? "Loading..." : "Delete"}

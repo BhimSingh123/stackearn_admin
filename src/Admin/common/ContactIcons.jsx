@@ -1,6 +1,5 @@
 import React from 'react';
-import { FaWhatsapp } from 'react-icons/fa';
- import { FaWhatsappSquare } from "react-icons/fa";
+import { BsWhatsapp } from "react-icons/bs";
 
 import { FaPhoneAlt } from "react-icons/fa";
 
@@ -14,18 +13,18 @@ const ContactIcons = ({ phoneNumber }) => {
         href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`}
         target="_blank"
         rel="noopener noreferrer"
-        className=" d-flex align-items-center gap-2 px-2 py-2 rounded"
+        className=" d-flex align-items-center gap-2 px-1 py-1 rounded"
       >
-        <FaWhatsappSquare size={20} />
+        <BsWhatsapp size={24} />
       </a>
 
       {/* Phone Icon */}
       <a
         href={`tel:${phoneNumber}`}
         target="_blank"
-        className="btn btn-primary  d-flex align-items-center gap-2  px-2 py-2 rounded"
+        className="  d-flex align-items-center gap-2  px-1 py-1 rounded"
       >
-        <FaPhoneAlt size={20} />
+        <FaPhoneAlt size={24} />
       </a>
     </div>
   );
