@@ -122,9 +122,9 @@ const DashboardLayout = ({ children }) => {
               <Link
                 key={idx}
                 to={item.to}
-                className={`nav-link px-3 py-2 mt-2  rounded d-flex align-items-center justify-content-center text-uppercase fw-semibold  ${location.pathname === item.to
-                  ? "btn btn-primary"
-                  : " text-dark"
+                className={`nav-link  px-3 py-2 mt-2  rounded d-flex align-items-center justify-content-center text-uppercase fw-semibold  ${location.pathname === item.to
+                  ? "login-head "
+                  : " "
                   }`}
                 style={{ minHeight: "45px", textAlign: "center" }}
               >
