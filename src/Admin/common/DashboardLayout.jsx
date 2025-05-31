@@ -116,7 +116,6 @@ const DashboardLayout = ({ children }) => {
           <ProfileIcon />
         </div>
         <div className="d-flex flex-column h-100 overflow-auto custom-scroll account-settings mb-2">
-          {/* Navigation links */}
           <nav className="nav flex-column ">
             {navItems.map((item, idx) => (
               <Link
