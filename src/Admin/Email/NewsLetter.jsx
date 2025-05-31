@@ -87,30 +87,39 @@ const NewsLetter = () => {
       <div className="settings-widget card-details">
         <div className="settings-menu p-0">
           <div className="profile-heading d-flex flex-column flex-md-row justify-content-md-between align-items-md-center gap-3">
-            <h3 className="h5 font-weight-bold">News Letter</h3>
 
-            {/* Search Input */}
+            <div className="col-12 col-md-4 col-lg-3">
+              <h3 className="h5 font-weight-bold">News Letter</h3>
+            </div>
 
-            <div className="input-group search-data">
-              <span className="input-group-text bg-white border-end-0">
-                <Search size={16} className="text-danger" />
-              </span>
-              <input
-                type="text"
-                className="form-control border-start-0"
-                placeholder="Search our email "
-                value={searchEmail}
-                onChange={handleSearchChange}
-              />
+            <div className="col-12 col-md-4 col-lg-3">
+              {/* Search Input */}
+
+              <div className="input-group search-data">
+                <span className="input-group-text bg-white border-end-0">
+                  <Search size={16} className="text-danger" />
+                </span>
+                <input
+                  type="text"
+                  className="form-control border-start-0"
+                  placeholder="Search our email "
+                  value={searchEmail}
+                  onChange={handleSearchChange}
+                />
+              </div>
             </div>
 
 
 
-            {/* Action Buttons */}
-            <div className="d-flex gap-4">
-              <WebniarSubmit selectedUsers={selectedUsers} disabled={selectedUsers.length === 0} />
-              <PrmotionSubmit selectedUsers={selectedUsers} disabled={selectedUsers.length === 0} />
-              <OfferCourseEmail selectedUsers={selectedUsers} disabled={selectedUsers.length === 0} />
+
+            <div className="col-12 col-md-4 col-lg-6">
+
+              {/* Action Buttons */}
+              <div className="d-flex gap-4">
+                <WebniarSubmit selectedUsers={selectedUsers} disabled={selectedUsers.length === 0} />
+                <PrmotionSubmit selectedUsers={selectedUsers} disabled={selectedUsers.length === 0} />
+                <OfferCourseEmail selectedUsers={selectedUsers} disabled={selectedUsers.length === 0} />
+              </div>
             </div>
           </div>
 

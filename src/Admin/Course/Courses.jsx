@@ -101,15 +101,17 @@ const Courses = () => {
                 </div>
               </div>
 
-              <div className="col-12 col-md-4 col-lg-3">
+              <div className="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
 
                 <Link
-                  className="login-head button"
+                  className="login-head button "
                   to="/admin/add-course"
                 >
-                  Add Course
+                  Add New Course
+
                 </Link>
               </div>
+
             </div>
             {/* featured-section-five */}
             <section className="mt-4">

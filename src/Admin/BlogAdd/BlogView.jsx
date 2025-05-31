@@ -86,10 +86,10 @@ const BlogView = () => {
                                 />
                             </div>
                         </div>
-                        <div className="col-12 col-md-6 col-lg-4">
+                        <div className="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
 
                             <Link
-                                className="btn btn-primary "
+                                className="login-head button "
                                 to="/admin/blog-add"
                             >
                                 Add Blog

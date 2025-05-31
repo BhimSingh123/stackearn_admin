@@ -7,6 +7,8 @@ import { Search } from "react-feather";
 import EventRow from "../components/EventRow";
 import PaymentOut from "../UserList/PaymentOut";
 import User2 from "../../assert/course-02.jpg";
+import Image from "../components/Image";
+
 
 const Payout = () => {
     const discountPercent = localStorage && localStorage.getItem("percntage")
@@ -40,7 +42,13 @@ const Payout = () => {
         fetchPaymentListing();
     }, [searchQuery, currentPage, activeTab]);
 
-
+    const getInitials = (name) => {
+        if (!name) return "?";
+        const names = name.split(" ");
+        const firstInitial = names[0]?.[0]?.toUpperCase() || "";
+        const lastInitial = names[names.length - 1]?.[0]?.toUpperCase() || "";
+        return `${firstInitial}${lastInitial}`;
+    };
     return (
         <DashboardLayout>
             <div className="settings-widget card-details">
@@ -124,27 +132,45 @@ const Payout = () => {
                                                 <tr key={index}>
                                                     <td>{index + 1}</td>
                                                     <td>
+
                                                         <div className="d-flex align-items-center">
                                                             <h2 className="table-avatar d-flex align-items-center">
                                                                 <Link to={`/admin/user-profile-Id/${item?._id}`} className="avatar">
-                                                                    <img
-                                                                        className="avatar-img"
-                                                                        src={item?.ProfileDetails?.profileImage || User2}
-                                                                        alt="User"
-                                                                    />
+                                                                    {item?.ProfileDetails?.profileImage ? (
+                                                                        <Image
+                                                                            classes="avatar-img"
+                                                                            src={item?.ProfileDetails?.profileImage || User2}
+                                                                            alt="User Image"
+                                                                            style={{ objectFit: "cover" }}
+                                                                        />
+                                                                    ) : (
+                                                                        <div
+                                                                            className="flex items-center justify-center avatar-img"
+                                                                            style={{
+                                                                                backgroundColor: "#002058",
+                                                                                borderRadius: "50%",
+                                                                                color: "#ffffff",
+                                                                                fontWeight: "normal",
+                                                                                fontSize: "1em",
+                                                                                width: '40px',
+                                                                                height: '40px',
+                                                                                display: "flex",
+                                                                                padding: "10px"
+                                                                            }}
+                                                                        >
+                                                                            {getInitials(item?.name)}
+                                                                        </div>
+                                                                    )}
                                                                 </Link>
-                                                                <div className="sell-tabel-info">
-                                                                    <p className="mb-1">
-                                                                        <Link to={`/admin/user-profile-Id/${item?._id}`} className="course-title">
-                                                                            {item?.name || "N/A"}
-                                                                        </Link>
-                                                                    </p>
-                                                                    <p className="instructor-name text-muted mb-0">
-                                                                        {item?.phone_number || "N/A"}
-                                                                    </p>
+                                                                <div className="">
+                                                                    <Link to={`/admin/user-profile-Id/${item?._id}`} className="d-block text-capitalize">
+                                                                        {item?.name}
+                                                                    </Link>
+                                                                    <span className="d-flex text-muted">{item?.email}</span>
                                                                 </div>
                                                             </h2>
                                                         </div>
+
                                                     </td>
                                                     <td>{item?.bank_details?.BankName || "N/A"}</td>
                                                     <td>{item?.bank_details?.BranchName || "N/A"}</td>
@@ -210,21 +236,37 @@ const Payout = () => {
                                                         <div className="d-flex align-items-center">
                                                             <h2 className="table-avatar d-flex align-items-center">
                                                                 <Link to={`/admin/user-profile-Id/${item?._id}`} className="avatar">
-                                                                    <img
-                                                                        className="avatar-img"
-                                                                        src={item?.ProfileDetails?.profileImage || User2}
-                                                                        alt="User"
-                                                                    />
+                                                                    {item?.ProfileDetails?.profileImage ? (
+                                                                        <Image
+                                                                            classes="avatar-img"
+                                                                            src={item?.ProfileDetails?.profileImage || User2}
+                                                                            alt="User Image"
+                                                                            style={{ objectFit: "cover" }}
+                                                                        />
+                                                                    ) : (
+                                                                        <div
+                                                                            className="flex items-center justify-center avatar-img"
+                                                                            style={{
+                                                                                backgroundColor: "#002058",
+                                                                                borderRadius: "50%",
+                                                                                color: "#ffffff",
+                                                                                fontWeight: "normal",
+                                                                                fontSize: "1em",
+                                                                                width: '40px',
+                                                                                height: '40px',
+                                                                                display: "flex",
+                                                                                padding: "10px"
+                                                                            }}
+                                                                        >
+                                                                            {getInitials(item?.name)}
+                                                                        </div>
+                                                                    )}
                                                                 </Link>
-                                                                <div className="sell-tabel-info">
-                                                                    <p className="mb-1">
-                                                                        <Link to={`/admin/user-profile-Id/${item?._id}`} className="course-title">
-                                                                            {item?.name || "N/A"}
-                                                                        </Link>
-                                                                    </p>
-                                                                    <p className="instructor-name text-muted mb-0">
-                                                                        {item?.phone_number || "N/A"}
-                                                                    </p>
+                                                                <div className="">
+                                                                    <Link to={`/admin/user-profile-Id/${item?._id}`} className="d-block text-capitalize">
+                                                                        {item?.name}
+                                                                    </Link>
+                                                                    <span className="d-flex text-muted">{item?.email}</span>
                                                                 </div>
                                                             </h2>
                                                         </div>

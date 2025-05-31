@@ -116,7 +116,7 @@ const OfferCourseEmail = ({ selectedUsers, disabled }) => {
         <div>
             {/* Button to Open Modal */}
             <button
-                className="btn btn-primary"
+                className="login-head button cursor-pointer"
                 onClick={handleOpen}
             >
                 Offer Course

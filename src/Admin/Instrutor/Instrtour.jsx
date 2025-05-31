@@ -96,13 +96,18 @@ const Instrtour = () => {
                             </div>
                         </div>
 
-                        <div className="col-12 col-md-4 col-lg-3">
+                        <div className="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
 
-                            {/* Button */}
-                            <Link className="login-head button" to="/admin/add/instructor">
-                                Add Instructor
+                            <Link
+                                className="login-head button "
+                                to="/admin/add/instructor"
+                            >
+                                Add New Instructor
+
                             </Link>
                         </div>
+
+
                     </div>
 
                     {/* <div className="checkout-form">

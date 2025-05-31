@@ -66,25 +66,34 @@ const UserEmail = () => {
       <div className="settings-widget card-details">
         <div className="settings-menu p-0">
           <div className="profile-heading d-flex flex-column flex-md-row justify-content-md-between align-items-md-center gap-3">
-            <h3 className="h5 font-weight-bold">Registered Users</h3>
+            <div className="col-12 col-md-6 col-lg-4">
 
-  <div className="input-group search-data">
-              <span className="input-group-text bg-white border-end-0">
-                <Search size={16} className="text-danger" />
-              </span>
-              <input
-                type="text"
-                className="form-control border-start-0"
-              placeholder="Search our email "
-                value={searchEmail}
-                onChange={handleSearchChange}
-              />
+              <h3 className="h5 font-weight-bold">Registered Users</h3>
             </div>
 
+            <div className="col-12 col-md-6 col-lg-4">
 
-            {/* Search Input */}
-            {/* Submit Button */}
-            <WebniarSubmit selectedUsers={selectedUsers} disabled={selectedUsers.length === 0} />
+
+              <div className="input-group search-data">
+                <span className="input-group-text bg-white border-end-0">
+                  <Search size={16} className="text-danger" />
+                </span>
+                <input
+                  type="text"
+                  className="form-control border-start-0"
+                  placeholder="Search our email "
+                  value={searchEmail}
+                  onChange={handleSearchChange}
+                />
+              </div>
+            </div>
+            <div className="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
+
+
+              {/* Search Input */}
+              {/* Submit Button */}
+              <WebniarSubmit selectedUsers={selectedUsers} disabled={selectedUsers.length === 0} />
+            </div>
           </div>
 
           {loading ? <LoadingPage /> : <Email />}

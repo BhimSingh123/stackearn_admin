@@ -111,9 +111,8 @@ const WebniarSubmit = ({ selectedUsers, disabled }) => {
 
     return (
         <div>
-            {/* Button to Open Modal */}
             <button
-                className="btn btn-primary cursor-pointer"
+                className="login-head button cursor-pointer"
                 onClick={handleOpen}
             >
                 Webinar

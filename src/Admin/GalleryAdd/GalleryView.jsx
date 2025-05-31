@@ -88,15 +88,19 @@ const GalleryView = () => {
                             </div>
                         </div>
 
-                        <div className="col-12 col-md-6 col-lg-4">
+                        <div className="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
 
                             <Link
-                                className="login-head button"
+                                className="login-head button "
                                 to="/admin/gallery-add"
                             >
-                                Add Gallery
+                                Add New
+                                Gallery
+
                             </Link>
                         </div>
+
+
                     </div>
 
                     <div className="checkout-form pb-0">

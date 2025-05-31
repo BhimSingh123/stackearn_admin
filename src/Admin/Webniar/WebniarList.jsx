@@ -89,15 +89,16 @@ const WebniarList = () => {
                 />
               </div>
             </div>
-            <div className="col-12 col-md-4 col-lg-3">
+            <div className="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
 
               <Link
-                className="btn btn-primary"
+                className="login-head button "
                 to="/admin/add-webniar"
               >
                 Add New Webinar
               </Link>
             </div>
+
           </div>
 
 
