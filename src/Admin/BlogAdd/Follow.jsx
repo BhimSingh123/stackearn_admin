@@ -9,7 +9,6 @@ const Follow = () => {
 
     const users = useSelector(state => state.users.users);
 
-  console.log("users", users)
     const [social, setSocial] = useState([]);
 
     const PaymentLisitng = async () => {

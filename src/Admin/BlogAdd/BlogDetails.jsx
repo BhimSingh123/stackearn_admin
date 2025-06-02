@@ -13,7 +13,6 @@ const BlogDetails = () => {
     const [loading, setLoading] = useState(false);
 
     const { Id } = useParams();
-    console.log("Id", Id)
     const [listing, setListing] = useState("");
 
     const fetchBlogListId = async () => {
@@ -21,7 +20,6 @@ const BlogDetails = () => {
         try {
             const main = new Listing();
             const response = await main.BlogGetId(Id); // Fetch instructor by ID
-            console.log("response", response)
             if (response?.data?.data) {
                 setListing(response.data.data);
             } else {

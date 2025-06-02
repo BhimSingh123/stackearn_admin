@@ -42,7 +42,6 @@ const AdminDashboard = () => {
     const unpaidAmount = (lastTodayIncome - paidAmount || 0);
 
 
-    console.log("dashboard", dashboard)
     return (
         <>
             <DashboardLayout>

@@ -35,7 +35,6 @@ const UserList = () => {
         try {
             const main = new Listing();
             const response = await main.userList(selectedOption, searchQuery, page, limit);
-            console.log("User List Response:", response);
             setListing(response?.data?.data?.users
             );
             setTotalPages(response?.data?.data.totalPages);
@@ -82,43 +81,43 @@ const UserList = () => {
             <div className="settings-widget card-details">
                 <div className="settings-menu p-0">
                     <div className="profile-heading d-flex flex-column flex-md-row justify-content-md-between align-items-md-center gap-3">
-            <div className="col-12 col-md-4 col-lg-3">
+                        <div className="col-12 col-md-4 col-lg-3">
 
-                        <h3>User History</h3>
+                            <h3>User History</h3>
 
                         </div>
 
-              <div className="col-12 col-md-6 col-lg-4">
+                        <div className="col-12 col-md-6 col-lg-4">
 
-                        <select
-                            id="contactSelect"
-                            className={`form-select same-height`}
-                            value={selectedOption}
-                            onChange={handleSelectChange}
-                        >
-                            <option value="">Select All</option>
-                            <option value="active">active </option>
-                            <option value="inactive">InActive </option>
-                            <option value="enrolled">Enrolled </option>
-                            <option value="registered">Registered</option>
-                        </select>
+                            <select
+                                id="contactSelect"
+                                className={`form-select same-height`}
+                                value={selectedOption}
+                                onChange={handleSelectChange}
+                            >
+                                <option value="">Select All</option>
+                                <option value="active">active </option>
+                                <option value="inactive">InActive </option>
+                                <option value="enrolled">Enrolled </option>
+                                <option value="registered">Registered</option>
+                            </select>
 
-</div>
-              <div className="col-12 col-md-6 col-lg-4">
-
-                        <div className="input-group search-data">
-                            <span className="input-group-text bg-white border-end-0">
-                                <Search size={16} className="text-danger" />
-                            </span>
-                            <input
-                                type="text"
-                                className="form-control border-start-0"
-                                placeholder="Search our contact name"
-                                value={search}
-                                onChange={handleSearchChange}
-                            />
                         </div>
-</div>
+                        <div className="col-12 col-md-6 col-lg-4">
+
+                            <div className="input-group search-data">
+                                <span className="input-group-text bg-white border-end-0">
+                                    <Search size={16} className="text-danger" />
+                                </span>
+                                <input
+                                    type="text"
+                                    className="form-control border-start-0"
+                                    placeholder="Search our contact name"
+                                    value={search}
+                                    onChange={handleSearchChange}
+                                />
+                            </div>
+                        </div>
 
                     </div>
                 </div>
