@@ -70,10 +70,8 @@ const VideoList = () => {
                     </div>
                   ) : listing && listing.length > 0 ? (
                     listing.map((webinar, index) => (
-                      <div className="col-md-6 mb-2" key={index}>
+                      <div className="col-xl-4 col-lg-4 ol-md-3 mb-2" key={index}>
                         <div className="card h-100 rounded">
-
-                          {/* Video Player or Placeholder */}
                           <div className="rounded-lg">
                             {webinar?.video ? (
                               <VideoModal videoLink={webinar.video} thumbnail={webinar?.thumbnail} />

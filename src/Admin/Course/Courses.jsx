@@ -123,9 +123,8 @@ const Courses = () => {
                     </div>
                   ) : listing && listing.length > 0 ? (
                     listing.map((item, index) => (
-                      <div className="col-xl-6 col-lg-6 col-md-6 mb-4" key={index}>
+                      <div className="col-xl-4 col-lg-4 col-md-3 mb-4" key={index}>
                         <div className="card h-100">
-                          {/* Badge + Course Image */}
                           <div className="position-relative">
                             <span className="badge bg-primary position-absolute top-0 start-0 m-2 text-uppercase">
                               {item.category || "Uncategorized"}

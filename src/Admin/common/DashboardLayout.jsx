@@ -5,13 +5,7 @@ import { useDispatch } from "react-redux";
 import { adduser, reduxdatauser } from "../../Redux/UserSlice";
 import logo from "../../assert/logo.png";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-
-import {
-  Navbar,
-  Nav,
-  Button,
-  Container
-} from "react-bootstrap";
+import { Navbar, Button, Container } from "react-bootstrap";
 import ProfileIcon from "../components/ProfileIcon";
 import { MdLogout } from "react-icons/md";
 
@@ -23,7 +17,6 @@ const DashboardLayout = ({ children }) => {
     try {
       const main = new Listing();
       const response = await main.profileVerify({ signal });
-      console.log("response", response);
       dispatch(adduser(response?.data?.data));
       dispatch(reduxdatauser(response?.data?.profileData));
     } catch (error) {
@@ -121,7 +114,7 @@ const DashboardLayout = ({ children }) => {
               <Link
                 key={idx}
                 to={item.to}
-                className={`nav-link  px-3 py-2 mt-2  rounded d-flex align-items-start justify-content-start  text-uppercase fw-bold  ${location.pathname === item.to
+                className={`nav-link px-3 py-2 mt-2 rounded d-flex align-items-start justify-content-start text-uppercase fw-bold  ${location.pathname === item.to
                   ? "itemdata"
                   : " "
                   }`}
@@ -137,7 +130,7 @@ const DashboardLayout = ({ children }) => {
       <div className="flex-grow-1 ms-lg-250">
         <Navbar
           expand="lg"
-          className="border-bottom position-fixed top-0 w-100"
+          className="border-bottom position-fixed top-0 w-100 bg-white shadow-sm"
           style={{ zIndex: 1050 }}
         >
           <Container fluid className="px-3">

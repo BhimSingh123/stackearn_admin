@@ -111,7 +111,7 @@ const BlogView = () => {
                                         </div>
                                     ) : listing && listing.length > 0 ? (
                                         listing.map((online, onlineIndex) => (
-                                            <div className="col-md-6" key={onlineIndex}>
+                                            <div className="col-xl-4 col-lg-4 col-md-3 mb-4" key={onlineIndex}>
                                                 <div className="mb-4 rounded">
                                                     <div className="card h-100 rounded">
 

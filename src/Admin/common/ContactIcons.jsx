@@ -13,7 +13,7 @@ const ContactIcons = ({ phoneNumber }) => {
         target="_blank"
         rel="noopener noreferrer"
         className="d-flex align-items-center justify-content-center  bg-success bg-gradient
- text-white rounded-circle p-2 shadow-sm"
+          text-white rounded-circle p-2 shadow-sm"
         style={{ transition: 'all 0.3s ease' }}
       >
         <BsWhatsapp size={20} />

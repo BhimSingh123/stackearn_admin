@@ -119,7 +119,7 @@ const WebniarList = () => {
                         const endTime = moment(`${today} ${webinar?.webniar_end_time}`, "YYYY-MM-DD HH:mm");
 
                         return (
-                          <div className="col-md-6 gap-3" key={index}>
+                          <div className="col-xl-4  col-lg-3  col-md-3 gap-3" key={index}>
                             <div className="card h-100 rounded">
                               {/* Video Player */}
                               <div className="rounded-lg mb-3">

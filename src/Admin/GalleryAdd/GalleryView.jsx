@@ -114,7 +114,7 @@ const GalleryView = () => {
                                         <LoadingPage />
                                     ) : listing.length > 0 ? (
                                         listing.map((course, index) => (
-                                            <div className="col-xxl-4 col-md-4 d-flex p-2 rounded" key={index}>
+                                            <div className="col-xl-4 col-md-4 d-flex p-2 rounded" key={index}>
                                                 <div className="card flex-fill">
                                                     {/* Image */}
                                                     <Image
