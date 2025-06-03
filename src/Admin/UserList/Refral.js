@@ -20,6 +20,7 @@ function Refral() {
         try {
             const main = new Listing();
             const response = await main.RefralGetCode(id, searchname, paymentDate, page, limit);
+           console.log(response);
             setDataRefral(response?.data?.data);
             setTotalItems(response?.data?.totalReferrals);
             localStorage && localStorage.setItem("Refral", response?.data?.totalReferrals || 0)
@@ -84,6 +85,8 @@ function Refral() {
                         <tr>
                             <th>Referred ID</th>
                             <th>Referrals</th>
+                            <th>Referrals</th>
+
                             <th>Course Name</th>
                             <th>Income Status</th>
                             <th>Earnings</th>
@@ -107,6 +110,30 @@ function Refral() {
                                                 </div>
                                             </div>
                                         </h2>
+                                    </td>
+                                    <td>
+                                        {item?.paymentDetails && item.paymentDetails.length > 0 && (
+                                            item.paymentDetails.map((payment, payIndex) => {
+                                                let referrer = null;
+                                                if (payment?.referredData1?.userId === id) {
+                                                    referrer = item.referred_by;
+                                                } else if (payment?.referredData2?.userId === id) {
+                                                    referrer = item.referred_first;
+                                                } else if (payment?.referredData3?.userId === id) {
+                                                    referrer = item.referred_second;
+                                                }
+                                                return referrer ? (
+                                                    <div key={payIndex} className="me-3">
+                                                        {referrer && (
+                                                            <div>
+                                                                <div className="fw-semibold">{referrer.name}</div>
+                                                                <div className="text-muted small">{referrer.email}</div>
+                                                            </div>
+                                                        )}
+                                                    </div>
+                                                ) : null;
+                                            })
+                                        )}
                                     </td>
                                     <td>
                                         <h2 className="table-avatar d-flex align-items-center">
