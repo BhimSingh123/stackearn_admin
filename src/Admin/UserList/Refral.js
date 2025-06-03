@@ -20,7 +20,7 @@ function Refral() {
         try {
             const main = new Listing();
             const response = await main.RefralGetCode(id, searchname, paymentDate, page, limit);
-           console.log(response);
+            console.log(response);
             setDataRefral(response?.data?.data);
             setTotalItems(response?.data?.totalReferrals);
             localStorage && localStorage.setItem("Refral", response?.data?.totalReferrals || 0)
@@ -85,8 +85,7 @@ function Refral() {
                         <tr>
                             <th>Referred ID</th>
                             <th>Referrals</th>
-                            <th>Referrals</th>
-
+                            <th>User Referrals</th>
                             <th>Course Name</th>
                             <th>Income Status</th>
                             <th>Earnings</th>
