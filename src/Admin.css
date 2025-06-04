@@ -5138,9 +5138,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .blog-widget .card-header .card-title {
-  font-size: 18px;
-  color: #0b0b0b;
-  font-weight: 700;
+  font-size: 20px !important;
+  color: #0b0b0b !important;
+  font-weight: 700 !important;
+  background-color: none !important;
 }
 
 .blog-details ul li {
@@ -5934,39 +5935,45 @@ img.header-img {
 }
 
 .sell-tabel-info {
-    max-width: 270px;
+  max-width: 270px;
 }
 
 
 .sell-course-head h3 {
-    color: #392c7d;
-    font-size: 24px;
-    font-weight: 600;
-    margin-bottom: 0
+  color: #392c7d;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 0
 }
 
 .sell-course-head {
-    border-bottom: 1px solid #c7c7c740
+  border-bottom: 1px solid #c7c7c740
 }
 
 .sell-table-group p {
-    color: #000;
-    font-size: 20px;
-    font-weight: 500;
-    margin-bottom: 0
+  color: #000;
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 0
 }
 
 .sell-tabel-info .course-info {
-    margin: 7px 0;
-    width: 270px
+  margin: 7px 0;
+  width: 270px
 }
 
 .sell-table-group .sell-tabel-info p {
-    font-size: 16px
+  font-size: 16px
 }
 
 
-.itemdata{
-  color :#F73636 !important;
+.itemdata {
+  color: #F73636 !important;
   font-weight: 600 !important;
+}
+
+.category-widget .categories li a {
+    color: #22100d !important;
+    font-size: 20px !important;
+    font-weight: 500 !important;
 }

@@ -25,38 +25,44 @@ const RecentPost = () => {
         fetchMarketLists(15);
     }, [1]);
 
+
     return (
-        <div className=" post-widget blog-widget bg-white">
-            <div className="card-header">
-                <h4 className="card-title">Recent Posts</h4>
-            </div>
-            <div className="card-body">
-                <ul className="latest-posts">
-                    {listing?.slice(0, 5).map((item, index) => (
-                        <li key={index}>
-                            <div className="post-thumb">
-                                <Link to={`/blog-details/${item._id}`}>
-                                    <img className="img-fluid" src={item.Image || Blog5} alt="Blog Post" />
-                                </Link>
-                            </div>
-                            <div className="post-info">
-                                <h4>
-                                    <Link to={`/blog-details/${item._id}`}>
-                                        {item.title.length > 50 ? `${item.title.substring(0, 50)}...` : item.title}
-                                    </Link>
-                                </h4>
+        <>
+            {listing?.length != 0 && (
+                <div className=" post-widget blog-widget bg-white">
+                    <div className="card-header">
+                        <h4 className="card-title">Recent Posts</h4>
+                    </div>
+                    <div className="card-body">
+                        <ul className="latest-posts">
+                            {listing?.slice(0, 5).map((item, index) => (
+                                <li key={index}>
+                                    <div className="post-thumb">
+                                        <Link to={`/blog-details/${item._id}`}>
+                                            <img className="img-fluid" src={item.Image || Blog5} alt="Blog Post" />
+                                        </Link>
+                                    </div>
+                                    <div className="post-info">
+                                        <h4>
+                                            <Link to={`/blog-details/${item._id}`}>
+                                                {item.title.length > 50 ? `${item.title.substring(0, 50)}...` : item.title}
+                                            </Link>
+                                        </h4>
 
-                                <p className="text-uppercase d-flex align-items-center">
-                                    <FaCalendarAlt size={12} className="me-2" />
-                                    {Moment(item.createdAt).format("MMM D, YYYY")}
-                                </p>
+                                        <p className="text-uppercase d-flex align-items-center">
+                                            <FaCalendarAlt size={12} className="me-2" />
+                                            {Moment(item.createdAt).format("MMM D, YYYY")}
+                                        </p>
 
-                            </div>
-                        </li>
-                    ))}
-                </ul>
-            </div>
-        </div>
+                                    </div>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                </div>
+            )}
+        </>
+
     );
 };
 

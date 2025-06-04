@@ -6,6 +6,7 @@ import RecentPost from './RecentPost';
 import FollowUs from './Follow';
 import Listing from '../Api/Listing';
 import { useNavigate } from "react-router-dom";
+import ShareBlog from '../common/ShareBlog';
 
 
 const BlogDetails = () => {
@@ -184,6 +185,19 @@ const BlogDetails = () => {
                                 </div>
                             </div>
                             {/* /Tags */}
+                            <div className="card category-widget blog-widget">
+                                <div className="card-header">
+                                    <h4 className="card-title">Blog Details </h4>
+                                </div>
+                                <div className="card-body">
+                                    <ShareBlog
+                                        blogUrl={`https://stackearn.com/blog-details/${listing?._id}`}
+                                        blogTitle={listing?.title}
+                                        blogImage={listing?.Image}
+                                    />
+
+                                </div>
+                            </div>
                         </div>
                     </div>
                     {/* /Blog Sidebar */}

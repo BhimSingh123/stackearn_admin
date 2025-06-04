@@ -22,6 +22,7 @@ import VideoModal from "../common/VideoModal";
 import Listing from "../Api/Listing";
 import Image from "../common/Image";
 import CourseContent from "./CourseContent";
+import ShareBlog from "../common/ShareBlog";
 
 const CourseDetails = () => {
     const { Id } = useParams();
@@ -594,6 +595,22 @@ const CourseDetails = () => {
                                                     Certificate of Completion
                                                 </li>
                                             </ul>
+                                        </div>
+                                    </div>
+
+                                    <div className="card include-sec mt-3">
+                                        <div className="card-body">
+                                            <div className="cat-title">
+                                                <h4>Course Share </h4>
+
+                                                <ShareBlog
+                                                    blogUrl={`https://stackearn.com/course-details/${courseDetails?._id}`}
+                                                    blogTitle={courseDetails?.title}
+                                                    blogImage={courseDetails?.courseImage}
+                                                />
+
+                                            </div>
+
                                         </div>
                                     </div>
 
