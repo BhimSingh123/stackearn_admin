@@ -85,8 +85,6 @@ class Listing extends Component {
         return Api.post("/instrutor/instrutor_post", data)
     }
 
-
-
     async InstrutorGetId(Id) {
         return Api.get(`/instrutor/instrutor_get/${Id}`)
     }
@@ -105,6 +103,9 @@ class Listing extends Component {
         return Api.post("/course/course_post", data)
     }
 
+    async forget(data) {
+        return Api.post('/user/forgot', data)
+    }
 
     async CourseGetId(Id) {
         return Api.get(`/course/course_get/${Id}`)
@@ -270,6 +271,9 @@ class Listing extends Component {
         return Api.get(`/user/profile?selectedoption=${selectedOption}&search=${search}&page=${page}&limit=${limit}`,)
     }
 
+    async forgetpassword(data) {
+        return Api.post("/user/forgot-password", data)
+    }
 
     async VideoGets(search, page, limit) {
         return Api.get(`/course/video_traning_get?search=${search}&page=${page}&limit=${limit}`)

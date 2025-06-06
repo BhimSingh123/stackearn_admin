@@ -49,7 +49,6 @@ const AdminDashboard = () => {
                     <div className=" d-flex gap-2">
                         {/* Profile Image */}
                         {profile?.profileImage ? (
-
                             <Image
                                 src={profile?.profileImage ? profile?.profileImage : User16}
                                 alt="User"
@@ -99,9 +98,9 @@ const AdminDashboard = () => {
                         <div className="col-lg-4 col-md-6 d-flex mb-2">
                             <div className="card flex-fill" style={{ background: "linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%)", color: "#fff" }}>
                                 <div className="card-body">
-                                    <h5>Today Receive Amount</h5>
-                                    <div style={{ display: 'flex', alignItems: 'center' }}>
-                                        <FaRupeeSign size={20} style={{ marginRight: '8px' }} />
+                                    <h5 className="text-uppercase mb-3"> Today Receive Amount</h5> {/* Added mb-3 for spacing below title */}
+                                    <div className="d-flex align-items-center"> {/* Use Bootstrap classes */}
+                                        <FaRupeeSign size={24} />
                                         <h2>{(dashboard?.todayIncome || 0)}</h2>
                                     </div>
                                 </div>
@@ -110,11 +109,10 @@ const AdminDashboard = () => {
                         <div className="col-lg-4 col-md-6 d-flex mb-2">
                             <div className="card flex-fill" style={{ background: "linear-gradient(135deg, #FFDEE9 0%, #B5FFFC 100%)", color: "#fff" }}>
                                 <div className="card-body">
-                                    <h5>GST Amount</h5>
-                                    <div style={{ display: 'flex', alignItems: 'center' }}>
-                                        <FaRupeeSign size={20} style={{ marginRight: '8px' }} />
+                                    <h5 className="text-uppercase mb-3"> GST Amount</h5>
+                                    <div className="d-flex align-items-center">
+                                        <FaRupeeSign size={24} />
                                         <h2>{Number(dashboard?.totalGSTAmount) || 0}</h2>
-
                                     </div>
                                 </div>
                             </div>
@@ -122,9 +120,9 @@ const AdminDashboard = () => {
                         <div className="col-lg-4 col-md-6 d-flex mb-2">
                             <div className="card flex-fill" style={{ background: "linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%)", color: "#fff" }}>
                                 <div className="card-body">
-                                    <h5>Today Net Income</h5>
-                                    <div style={{ display: 'flex', alignItems: 'center' }}>
-                                        <FaRupeeSign size={20} style={{ marginRight: '8px' }} />
+                                    <h5 className="text-uppercase mb-3"> Today Net Income</h5>
+                                    <div className="d-flex align-items-center">
+                                        <FaRupeeSign size={24} />
                                         <h2>
                                             {(Number(dashboard?.todayIncome || 0))}
                                         </h2>
@@ -135,9 +133,9 @@ const AdminDashboard = () => {
                         <div className="col-lg-4 col-md-6 d-flex mb-2">
                             <div className="card flex-fill" style={{ background: "linear-gradient(135deg, #FF9A9E 0%, #fad0c4 100%)", color: "#fff" }}>
                                 <div className="card-body">
-                                    <h5>Today Income</h5>
-                                    <div style={{ display: 'flex', alignItems: 'center' }}>
-                                        <FaRupeeSign size={20} style={{ marginRight: '8px' }} />
+                                    <h5 className="text-uppercase mb-3"> Today Income</h5>
+                                    <div className="d-flex align-items-center">
+                                        <FaRupeeSign size={24} />
                                         <h2>
                                             {
                                                 (dashboard?.todayIncome || 0) -
@@ -154,15 +152,18 @@ const AdminDashboard = () => {
                         <div className="col-lg-4 col-md-6 d-flex mb-2">
                             <div className="card flex-fill" style={{ background: "linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%)", color: "#fff" }}>
                                 <div className="card-body">
-                                    <h5>Next Payout</h5>
-                                    <div style={{ display: 'flex', alignItems: 'center' }}>
-                                        <FaRupeeSign size={20} style={{ marginRight: '8px' }} />
+                                    <h5 className="text-uppercase mb-3"> Next Payout</h5>
+                                    <div className="d-flex align-items-center">
+                                        <FaRupeeSign size={24} />
                                         <h2>{dashboard?.totaluserIncome?.referred_user_pay || 0}</h2>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+
+
                     <h2 className="admindasheading">Payout </h2>
                     <div className="row justify-content-start">
 
@@ -176,9 +177,9 @@ const AdminDashboard = () => {
                                 }}
                             >
                                 <div className="card-body">
-                                    <h5>Total Payout</h5>
-                                    <div style={{ display: "flex", alignItems: "center" }}>
-                                        <FaRupeeSign size={20} style={{ marginRight: "8px" }} />
+                                    <h5 className="text-uppercase mb-3"> Total Payout</h5>
+                                    <div className="d-flex align-items-center">
+                                        <FaRupeeSign size={24} style={{ marginRight: "8px" }} />
                                         <h2>{lastTodayIncome}</h2>
                                     </div>
                                 </div>
@@ -195,9 +196,9 @@ const AdminDashboard = () => {
                                 }}
                             >
                                 <div className="card-body">
-                                    <h5>Paid Amount</h5>
-                                    <div style={{ display: "flex", alignItems: "center" }}>
-                                        <FaRupeeSign size={20} style={{ marginRight: "8px" }} />
+                                    <h5 className="text-uppercase mb-3"> Paid Amount</h5>
+                                    <div className="d-flex align-items-center">
+                                        <FaRupeeSign size={24} style={{ marginRight: "8px" }} />
                                         <h2>{paidAmount}</h2>
                                     </div>
                                 </div>
@@ -214,22 +215,21 @@ const AdminDashboard = () => {
                                 }}
                             >
                                 <div className="card-body">
-                                    <h5>Unpaid Amount</h5>
-                                    <div style={{ display: "flex", alignItems: "center" }}>
-                                        <FaRupeeSign size={20} style={{ marginRight: "8px" }} />
+                                    <h5 className="text-uppercase mb-3"> Unpaid Amount</h5>
+                                    <div className="d-flex align-items-center">
+                                        <FaRupeeSign size={24} style={{ marginRight: "8px" }} />
                                         <h2>{(unpaidAmount || 0)}</h2>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-
                         <div className="col-lg-4 col-md-6 d-flex mb-2">
                             <div className="card flex-fill" style={{ background: "linear-gradient(135deg, #ff9a9e 30%, #fad0c4 80%)", color: "#fff" }}>
                                 <div className="card-body">
-                                    <h5> Add Money</h5>
-                                    <div style={{ display: 'flex', alignItems: 'center' }}>
-                                        <FaRupeeSign size={20} style={{ marginRight: '8px' }} />
+                                    <h5 className="text-uppercase mb-3"> Add Money</h5>
+                                    <div className="d-flex align-items-center">
+                                        <FaRupeeSign size={24} />
                                         <h2>{dashboard?.todayData?.totalAdd || 0}</h2>
                                     </div>
                                 </div>
@@ -239,9 +239,9 @@ const AdminDashboard = () => {
                         <div className="col-lg-4 col-md-6 d-flex mb-2">
                             <div className="card flex-fill" style={{ background: "linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%)", color: "#fff" }}>
                                 <div className="card-body">
-                                    <h5> widthrawal Money</h5>
-                                    <div style={{ display: 'flex', alignItems: 'center' }}>
-                                        <FaRupeeSign size={20} style={{ marginRight: '8px' }} />
+                                    <h5 className="text-uppercase mb-3"> Widthrawal Money</h5>
+                                    <div className="d-flex align-items-center">
+                                        <FaRupeeSign size={24} />
                                         <h2>{dashboard?.todayData?.totalWithdrawal || 0}</h2>
                                     </div>
                                 </div>
@@ -250,9 +250,9 @@ const AdminDashboard = () => {
                         <div className="col-lg-4 col-md-6 d-flex mb-2">
                             <div className="card flex-fill" style={{ background: "linear-gradient(135deg, #ff9a9e 100%, #fad0c4 0%)", color: "#fff" }}>
                                 <div className="card-body">
-                                    <h5> OverAll Add Money</h5>
-                                    <div style={{ display: 'flex', alignItems: 'center' }}>
-                                        <FaRupeeSign size={20} style={{ marginRight: '8px' }} />
+                                    <h5 className="text-uppercase mb-3"> Overall Add Money</h5>
+                                    <div className="d-flex align-items-center">
+                                        <FaRupeeSign size={24} />
                                         <h2>{dashboard?.overallData?.totalAdd || 0}</h2>
                                     </div>
                                 </div>
@@ -261,11 +261,10 @@ const AdminDashboard = () => {
                         <div className="col-lg-4 col-md-6 d-flex mb-2">
                             <div className="card flex-fill" style={{ background: "linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%)", color: "#fff" }}>
                                 <div className="card-body">
-                                    <h5>Overall Widthrawal Money</h5>
-                                    <div style={{ display: 'flex', alignItems: 'center' }}>
-                                        <FaRupeeSign size={20} style={{ marginRight: '8px' }} />
+                                    <h5 className="text-uppercase mb-3"> Overall Widthrawal Money</h5>
+                                    <div className="d-flex align-items-center">
+                                        <FaRupeeSign size={24} />
                                         <h2>{dashboard?.overallData?.totalWithdrawal || 0}</h2>
-
                                     </div>
                                 </div>
                             </div>
@@ -273,9 +272,9 @@ const AdminDashboard = () => {
                         <div className="col-lg-4 col-md-6 d-flex mb-2">
                             <div className="card flex-fill" style={{ background: "linear-gradient(135deg, #84fab0 100%, #8fd3f4 0%)", color: "#fff" }}>
                                 <div className="card-body">
-                                    <h5> OverAll Payout</h5>
-                                    <div style={{ display: 'flex', alignItems: 'center' }}>
-                                        <FaRupeeSign size={20} style={{ marginRight: '8px' }} />
+                                    <h5 className="text-uppercase mb-3"> Overall Payout</h5>
+                                    <div className="d-flex align-items-center">
+                                        <FaRupeeSign size={24} />
                                         <h2>{dashboard?.overallData?.totalPayout || 0}</h2>
                                     </div>
                                 </div>
@@ -283,14 +282,16 @@ const AdminDashboard = () => {
                         </div>
                     </div>
 
+
+
                     <h2 className="admindasheading ">Monthly Passive Income</h2>
                     <div className="row justify-content-start">
                         <div className="col-lg-4 col-md-6 d-flex mb-2">
                             <div className="card flex-fill" style={{ background: "linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%)", color: "#fff" }}>
                                 <div className="card-body">
-                                    <h5>First User Passive Income</h5>
-                                    <div style={{ display: 'flex', alignItems: 'center' }}>
-                                        <FaRupeeSign size={20} style={{ marginRight: '8px' }} />
+                                    <h5 className="text-uppercase mb-3"> First User Passive Income</h5>
+                                    <div className="d-flex align-items-center">
+                                        <FaRupeeSign size={24} />
                                         <h2>{(dashboard?.overallPassiveIncome?.first_user_pay || 0)}</h2>
                                     </div>
                                 </div>
@@ -299,9 +300,9 @@ const AdminDashboard = () => {
                         <div className="col-lg-4 col-md-6 d-flex mb-2">
                             <div className="card flex-fill" style={{ background: "linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%)", color: "#fff" }}>
                                 <div className="card-body">
-                                    <h5>Second User Month Income</h5>
-                                    <div style={{ display: 'flex', alignItems: 'center' }}>
-                                        <FaRupeeSign size={20} style={{ marginRight: '8px' }} />
+                                    <h5 className="text-uppercase mb-3"> Second User Month Income</h5>
+                                    <div className="d-flex align-items-center">
+                                        <FaRupeeSign size={24} />
                                         <h2>{(dashboard?.overallPassiveIncome?.second_user_pay || 0)}</h2>
                                     </div>
                                 </div>
@@ -310,26 +311,27 @@ const AdminDashboard = () => {
                         <div className="col-lg-4 col-md-6 d-flex mb-2">
                             <div className="card flex-fill" style={{ background: "linear-gradient(135deg, #c6ffdd 0%, #fbd786 100%)", color: "#fff" }}>
                                 <div className="card-body">
-                                    <h5>Overall Passive Income</h5>
-                                    <div style={{ display: 'flex', alignItems: 'center' }}>
-                                        <FaRupeeSign size={20} style={{ marginRight: '8px' }} />
+                                    <h5 className="text-uppercase mb-3"> Overall Passive Income</h5>
+                                    <div className="d-flex align-items-center">
+                                        <FaRupeeSign size={24} />
                                         <h2>{(dashboard?.overallPassiveIncome?.second_user_pay || 0) + (dashboard?.overallPassiveIncome?.first_user_pay || 0)}</h2>
-
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+
+
                     <h2 className="admindasheading ">OverAll Income Management</h2>
                     <div className="row justify-content-start">
                         <div className="col-lg-4 col-md-6 d-flex mb-2">
                             <div className="card flex-fill" style={{ background: "linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%)", color: "#fff" }}>
                                 <div className="card-body">
-                                    <h5>This Week Income</h5>
-                                    <div style={{ display: 'flex', alignItems: 'center' }}>
-                                        <FaRupeeSign size={20} style={{ marginRight: '8px' }} />
+                                    <h5 className="text-uppercase mb-3"> This Week Income</h5>
+                                    <div className="d-flex align-items-center">
+                                        <FaRupeeSign size={24} />
                                         <h2>
-
                                             {(dashboard?.thisWeekIncome || 0) -
                                                 (dashboard?.totaluserIncome?.referred_user_pay_weekly || 0) -
                                                 (dashboard?.totalUnpaid || 0) +
@@ -347,9 +349,9 @@ const AdminDashboard = () => {
                         <div className="col-lg-4 col-md-6 d-flex mb-2">
                             <div className="card flex-fill" style={{ background: "linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%)", color: "#fff" }}>
                                 <div className="card-body">
-                                    <h5>This Month Income</h5>
-                                    <div style={{ display: 'flex', alignItems: 'center' }}>
-                                        <FaRupeeSign size={20} style={{ marginRight: '8px' }} />
+                                    <h5 className="text-uppercase mb-3"> This Month Income</h5>
+                                    <div className="d-flex align-items-center">
+                                        <FaRupeeSign size={24} />
                                         <h2>
                                             {
                                                 (dashboard?.thisMonthIncome || 0) +
@@ -362,8 +364,6 @@ const AdminDashboard = () => {
                                                 (dashboard?.monthData?.totalWithdrawal || 0)
 
                                             }</h2>
-
-
                                     </div>
                                 </div>
                             </div>
@@ -371,9 +371,9 @@ const AdminDashboard = () => {
                         <div className="col-lg-4 col-md-6 d-flex mb-2">
                             <div className="card flex-fill" style={{ background: "linear-gradient(135deg, #c6ffdd 0%, #fbd786 100%)", color: "#fff" }}>
                                 <div className="card-body">
-                                    <h5>Overall Income</h5>
-                                    <div style={{ display: 'flex', alignItems: 'center' }}>
-                                        <FaRupeeSign size={20} style={{ marginRight: '8px' }} />
+                                    <h5 className="text-uppercase mb-3"> Overall Income</h5>
+                                    <div className="d-flex align-items-center">
+                                        <FaRupeeSign size={24} />
                                         <h2>
                                             {(dashboard?.overallIncome || 0) +
                                                 (dashboard?.totaluserIncome?.UnPaidAmounts || 0) +
@@ -386,19 +386,21 @@ const AdminDashboard = () => {
                                                 (dashboard?.totaluserIncome?.referred_user_pay_overall || 0)
                                             }
                                         </h2>
-
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+
+
                     <h2 className="admindasheading ">User Management</h2>
                     <div className="row justify-content-start">
 
                         <div className="col-lg-4 col-md-6 d-flex mb-2">
                             <div className="card flex-fill" style={{ background: "linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%)", color: "#fff" }}>
                                 <div className="card-body">
-                                    <h5>Active User</h5>
+                                    <h5 className="text-uppercase mb-3"> Active User</h5>
                                     <h2>{dashboard?.active || 0}</h2>
                                 </div>
                             </div>
@@ -406,7 +408,7 @@ const AdminDashboard = () => {
                         <div className="col-lg-4 col-md-6 d-flex mb-2">
                             <div className="card flex-fill" style={{ background: "linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%)", color: "#fff" }}>
                                 <div className="card-body">
-                                    <h5>Inactive User</h5>
+                                    <h5 className="text-uppercase mb-3"> Inactive User</h5>
                                     <h2>{dashboard?.inactive || 0}</h2>
                                 </div>
                             </div>
@@ -414,7 +416,7 @@ const AdminDashboard = () => {
                         <div className="col-lg-4 col-md-6 d-flex mb-2">
                             <div className="card flex-fill" style={{ background: "linear-gradient(135deg, #ffdde1 0%, #ee9ca7 100%)", color: "#fff" }}>
                                 <div className="card-body">
-                                    <h5>Registered User</h5>
+                                    <h5 className="text-uppercase mb-3"> Registered User</h5>
                                     <h2>{dashboard?.registered || 0}</h2>
                                 </div>
                             </div>
@@ -423,7 +425,7 @@ const AdminDashboard = () => {
                         <div className="col-lg-4 col-md-6 d-flex mb-2">
                             <div className="card flex-fill" style={{ background: "linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%)", color: "#fff" }}>
                                 <div className="card-body">
-                                    <h5>Enrolled User</h5>
+                                    <h5 className="text-uppercase mb-3"> Enrolled User</h5>
                                     <h2>{dashboard?.enrolled || 0}</h2>
                                 </div>
                             </div>
@@ -431,7 +433,7 @@ const AdminDashboard = () => {
                         <div className="col-lg-4 col-md-6 d-flex mb-2">
                             <div className="card flex-fill" style={{ background: "linear-gradient(135deg, #a8ff78 0%, #78ffd6 100%)", color: "#fff" }}>
                                 <div className="card-body">
-                                    <h5>Total User</h5>
+                                    <h5 className="text-uppercase mb-3"> Total User</h5>
                                     <h2>{dashboard?.totalusercount - 1 || 0}</h2>
                                 </div>
                             </div>

@@ -45,6 +45,8 @@ import UserEmail from "./Admin/Email/UserEmail.jsx";
 import AdminSupport from "./Admin/Email/Support.jsx"
 import Payout from './Admin/payout/Payout.jsx';
 import ScrollToTop from './Admin/common/ScrollToTop.jsx';
+import ForgotPassword from './Admin/forgotPassword/ForgotPassword.jsx'
+import NewPassword from './Admin/Newpassword/Newpassword.jsx';
 function App() {
   return (
     <>
@@ -55,6 +57,10 @@ function App() {
           <Route path="/admin/login" element={<AdminLogin />} />
           <Route path="/" element={<AdminLogin />} />
           <Route path="/admin/dashboard" element={<AdminDashboard />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/new-password/:token" element={<NewPassword />} />
+
+
           <Route path="/admin/admin-contact" element={<List />} />
           <Route path="/admin/payout" element={<Payout />} />
           <Route path="/admin/subsribe" element={<SubscribeHistory />} />

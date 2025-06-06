@@ -127,7 +127,7 @@ const WebniarList = () => {
                               </div>
                               {/* Title */}
                               <div className="p-1">
-                                <h5 className="card-subtitle mt-1 mb-2">{webinar?.title}</h5>
+                                <h5 className="card-subtitle mt-1 mb-2 two-line-ellipsis">{webinar?.title}</h5>
                                 <div className="rounded d-flex align-items-center mt-1">
                                   <FaCalendarAlt size={18} className="text-primary" />
                                   <p className="card-text mb-0 ms-2">
@@ -146,7 +146,8 @@ const WebniarList = () => {
 
                                 <hr className="my-3" />
                                 {/* Edit and Delete Buttons */}
-                                <div className="d-flex justify-content-between p-2">
+                                <div className="d-flex justify-content-between px-2 pb-2">
+
                                   <Link
                                     to={`/admin/update-webinar/${webinar?._id}`}
                                     className="upcoming-status rounded px-2 font-normal py-1 text-capitalize "

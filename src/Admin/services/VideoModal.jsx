@@ -48,7 +48,7 @@ const VideoModal = ({ videoLink, thumbnail }) => {
 
   return (
     <div>
-      <a className="popup-youtube position-relative" onClick={handleOpen} style={{ cursor: 'pointer' }}>
+      <div className="popup-youtube position-relative" onClick={handleOpen} style={{ cursor: 'pointer' }}>
         <img
           src={thumbnail ? thumbnail : generateThumbnail(videoLink)}
           alt="Video Thumbnail"
@@ -57,7 +57,7 @@ const VideoModal = ({ videoLink, thumbnail }) => {
         <div className="position-absolute top-50 start-50 translate-middle">
           <FaPlay color="white" size={24} />
         </div>
-      </a>
+      </div>
 
       {isOpen && (
         <div className="popup-overlay" onClick={handleClose}>

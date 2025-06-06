@@ -5,7 +5,6 @@ h4,
 h5,
 h6 {
   color: #002058 !important;
-  font-weight: 500 !important;
 }
 
 svg {
@@ -5973,7 +5972,22 @@ img.header-img {
 }
 
 .category-widget .categories li a {
-    color: #22100d !important;
-    font-size: 20px !important;
-    font-weight: 500 !important;
+  color: #22100d !important;
+  font-size: 20px !important;
+  font-weight: 500 !important;
+}
+
+.two-line-ellipsis {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+label {
+  color: #685f78;
+  font-weight: 500;
+  margin-bottom: 15px;
+  width: 100%;
 }

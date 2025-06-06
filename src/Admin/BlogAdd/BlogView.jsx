@@ -152,10 +152,11 @@ const BlogView = () => {
 
                                                             {/* Edit and Delete Buttons */}
                                                             <hr className="my-3" />
-                                                            <div className="d-flex justify-content-between mt-3 mb-3">
+                                                            <div className="d-flex justify-content-between px-2 pb-2">
                                                                 <Link
                                                                     to={`/admin/blog-update/${online?._id}`}
-                                                                    className="upcoming-status rounded px-2 py-1 d-flex align-items-center"
+                                                                    className="upcoming-status rounded px-2 font-normal py-1 text-capitalize "
+
                                                                 >
                                                                     <i className="bx bx-edit me-2" />
                                                                     Edit

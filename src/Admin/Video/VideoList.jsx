@@ -97,10 +97,10 @@ const VideoList = () => {
                             <hr className="my-3" />
 
                             {/* Edit and Delete Buttons */}
-                            <div className="d-flex justify-content-between p-2">
+                            <div className="d-flex justify-content-between px-2 pb-2">
                               <Link
                                 to={`/admin/video_add/${webinar?._id}`}
-                                className="upcoming-status rounded px-2 font-normal py-1 text-capitalize"
+                                className="upcoming-status rounded px-2 font-normal py-1 text-capitalize "
                               >
                                 <i className="bx bx-edit" />
                                 <span style={{ marginLeft: '5px' }}>Edit</span>

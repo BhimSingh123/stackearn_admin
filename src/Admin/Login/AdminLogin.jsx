@@ -4,6 +4,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import Listing from "../Api/Listing";
+import { IoMdArrowRoundBack } from "react-icons/io";
+import LoginImg from "../../assert/login-img.png";
 
 const Login = () => {
 
@@ -78,21 +80,37 @@ const Login = () => {
     };
     return (
         <>
-            <div className="container py-5">
-                <div className="row justify-content-center">
-                    {/* Left Column - Login Section */}
-                    <div className="col-md-6 bg-light p-5  ">
-                        <div className="text-center mb-4">
-                            <Link to="/">
-                                <img src={logo} className="img-fluid mb-3" alt="Logo" style={{ maxWidth: '150px' }} />
-                            </Link>
-                            <h2>Sign into Your Account</h2>
-                        </div>
+            <div className="container py-5" style={{ minHeight: "100vh" }}>
+                <div className="row justify-content-center align-items-center" style={{ minHeight: "80vh" }}>
+                    <div className="col-lg-6 d-none d-lg-flex flex-column justify-content-center login-bg">
+                        <div className="owl-carousel login-slide owl-theme">
+                            <div className="welcome-login text-center">
+                                <div className="login-banner mb-3">
+                                    <img src={LoginImg} className="img-fluid" alt="Logo" />
+                                </div>
+                                <div className="mentor-course px-3">
+                                    <h2>Welcome to DreamsLMS Courses.</h2>
+                                    <p>Continue your journey where StackEarn learning meets earning.
 
+                                        Log in to access your dashboard, track your progress, and keep building the future you deserve!.</p>
+                                </div>
+                            </div>
+                            {/* Add more slides if needed */}
+                        </div>
+                    </div>
+                    <div className="col-12 col-md-8 col-lg-6">
+                        <div className="d-flex justify-content-between align-items-center mb-4">
+                            <img src={logo} className="img-fluid" style={{ maxHeight: "60px" }} alt="Logo" />
+                            <Link to="/" className="text-decoration-none d-flex align-items-center" style={{ gap: "6px" }}>
+                                <IoMdArrowRoundBack size={20} />
+                                Back to Home
+                            </Link>
+                        </div>
+                        <h3 className="mb-3 text-center">Sign into Your Account?</h3>
                         <form onSubmit={handleForms}>
                             {/* Email Field */}
                             <div className="mb-3">
-                                <label className="form-label">Email</label>
+                                <label className="form-control-label">Email</label>
                                 <input
                                     type="email"
                                     name="email"
@@ -107,7 +125,7 @@ const Login = () => {
 
                             {/* Password Field */}
                             <div className="mb-3">
-                                <label className="form-label">Password</label>
+                                <label className="form-control-label">Password</label>
                                 <div className="input-group">
                                     <input
                                         type={passwordType}
@@ -150,8 +168,10 @@ const Login = () => {
                             </div>
                         </form>
                     </div>
+
                 </div>
             </div>
+
 
         </>
     );
